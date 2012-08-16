@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Queue'
         db.create_table('djkombu_queue', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=200)),
+            ('name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=191)),
         ))
         db.send_create_signal('django', ['Queue'])
 
@@ -47,7 +47,7 @@ class Migration(SchemaMigration):
         'django.queue': {
             'Meta': {'object_name': 'Queue', 'db_table': "'djkombu_queue'"},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '200'})
+            'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '191'})
         }
     }
 
