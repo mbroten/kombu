@@ -7,7 +7,7 @@ from .managers import QueueManager, MessageManager
 
 
 class Queue(models.Model):
-    name = models.CharField(_('name'), max_length=200, unique=True)
+    name = models.CharField(_('name'), max_length=191, unique=True)
 
     objects = QueueManager()
 
